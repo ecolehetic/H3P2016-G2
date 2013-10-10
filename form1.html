@@ -12,10 +12,46 @@
 	<link rel="stylesheet" href="css/style.css" />
   <link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css' /> 
 <style type="text/css">
-	
+	body{font-family:'Montserrat Alternates';font-size:.9em;}
+	fieldset{width:30%;margin:0 auto;}
+	input, label{padding:0 .5em;line-height:2em;}
+	input{
+	  font-family:'Montserrat Alternates';
+	  width:70%;
+	  margin:0 0 .5em 0;
+	  border:1px solid #ccc;
+	  box-sizing:border-box;
+	}
+	input[type=submit]{
+    font-size:1.5em;
+    line-height:3em;
+    background-color:#4AC95C;
+    color:#fff;
+    border:none;
+    text-transform:uppercase;
+  }
+  ::-webkit-input-placeholder {
+    color: #999;
+    font-style:italic;
+    font-size:.7em;
+  }
 </style>
 </head>
 <body>
-	
+	<form autocomplete="off">
+   <fieldset>
+    <input type="text" id="full_name" name="full_name" required />
+    <label for="full_name">Votre nom</label>
+    
+    <input type="email" id="email_addr" name="email_addr" required />
+    <label for="email_addr">Votre email </label>
+    
+    <input type="email" id="email_addr_repeat" name="email_addr_repeat" required />
+    <label for="email_addr_repeat">Retapez votre email </label>
+    
+    <input type="tel" id="tel" name="tel" pattern="[0-9]{10}" title="un numéro à 10 chiffres" placeholder="Téléphone à 10 chiffres" />
+    <input type="submit" value="complete" />
+    </fieldset>
+  </form>
 </body>
 </html>
