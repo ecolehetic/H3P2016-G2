@@ -26,7 +26,7 @@
 	  background-color:#fff;
 	  border-top-left-radius:5px;
 	  border-bottom-left-radius:5px;
-	  transition:all 2s ease 1s;
+	  transition:all 1s ease .2s;
 	}
 	label:after{
 	  content:'';
@@ -46,13 +46,17 @@
 	input{font-family:'Montserrat Alternates';width:70%;margin:0 0 .5em 0;border:1px solid #ccc;box-sizing:border-box;border-radius:5px;}
 	
 	
-	/*:invalid ~ input[type=submit]{display:none;}*/
-	
+
 	input:invalid{border:2px dotted #992429;}
 	input:focus{border-color:transparent;outline:none;}
 	input:valid{border-color:#459939;color:#459939;}
 	
-	input:valid + label{opacity:0;}
+	input:valid + label{opacity:0;-webkit-transform:rotate(180deg);margin-left:0;}
+	
+	:invalid ~ input[type=submit]:hover{
+	  -webkit-animation:shakebooty .1s linear infinite;
+	}
+	
   input[type=submit]{
 	  font-size:1.5em;
 	  line-height:3em;
@@ -65,6 +69,12 @@
 	}
 	
   ::-webkit-input-placeholder {color: #999;font-style:italic;font-size:.7em;}
+  
+  @-webkit-keyframes shakebooty{
+    from{margin-left:5px;}
+    50%{margin-left:0px;}
+    to{margin-left:5px;}
+  }
 </style>
 </head>
 <body>

@@ -1,0 +1,70 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title></title>
+	<meta name="description" content="">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="stylesheet" href="css/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'> 
+<style type="text/css">
+	body{font-family: 'Montserrat Alternates', serif;font-size:.9em;min-height:1000px;background-color:#607E88;background-image:-webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6));}
+  fieldset{width:30%;margin:25px auto;position:relative;}
+  input, label{padding:0 .5em;line-height:2em;}
+  input {font-family: 'Montserrat Alternates', serif;width:70%;border:1px solid #ccc;margin:0 0 15px 0;box-sizing:border-box;border-radius:5px;}
+  input:invalid { border:2px dotted #CA605E;}
+  input:focus{border-color:transparent;outline:none;}
+  input:focus + label{opacity:1;}
+  input:valid{ border:2px solid #2DAA29;color:#2DAA29;}
+  input:required:valid{background:#fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAD2UExURfn7+WCmV2mvX/j7+Pn7+J/KmonOfp7JmY3OgIfNfIvPf22zY2qyYGqwYD+DOVmgUVqiUmiuXvr8+YLLePn8+ILKd0CFOVyjVIHKdmSsW2etXNbs04XLefj694HJdlqmUV+lVqnLpaLEnzp+NMPivlyjU1GaSXa9bGOwWXnAbT2DN9zv2WGnWDyANobMfIrOf9jt1Y/Rgn7IdI3PgYPJeKnOpYnNfff691ynU1efT4XIekeOQD2BN7nbtTp9ND6CODl9M221Y57ImV2kVGyyYqDJnJ3ImbXWsm20Y3a9a53HmJDShIfMe3W9bIXJeobJeTt/Nf///4Hh6TYAAABSdFJOU////////////////////////////////////////////////////////////////////////////////////////////////////////////wCtLQxxAAAAjklEQVR42mIIRAMMeAVYTVEFWLmZFJEF2F0MrRiVEAJOvMZcOmIMQAEDFRDfjUmfjZGPAahF21fTNjDQS9CMU8EeKM0gre7PYeHuKqUn42wD0s8gpOHp7cfjYSKsqssAcYeIvCObj4ScQAADzGHMapKiRvzKLAiXMluLWzqwIDtdVsuOAdUv5gy4fQsQYACU7kAA7L/JrQAAAABJRU5ErkJggg==') no-repeat 95% center;}
+  input:valid + label{opacity:0;-webkit-transform: translate(200px, 0px);color:#2DAA29;}
+  label{opacity:.5;font-size:1em;position:absolute;background-color:#fff;color:#999;border-top-left-radius:5px;border-bottom-left-radius:5px;-webkit-transition:all 1s ease .2s;}
+  label:after{content:'';width:0;height:0;border-bottom:1em solid transparent;border-left:1em solid #fff;border-right:1em solid transparent;border-top:1em solid transparent;position:absolute;bottom:0;right:-1.95em;}
+  label:nth-of-type(1){margin-left:-110px;}
+  label:nth-of-type(2){margin-left:-118px;}
+  label:nth-of-type(3){margin-left:-180px;}
+  ::-webkit-input-placeholder {color: #999;font-style:italic;font-size:.7em;}
+  :-moz-placeholder {color: #999;font-style:italic;font-size:.7em;}
+  
+  :invalid ~ div div{-webkit-transform:rotateY(180deg);}
+  :invalid ~ div div:hover{-webkit-animation:shake .1s linear .1s 6;}
+  input[type=submit]{font-size:1.5em;line-height:3em;width:100%;background-color:#4AC95C;background-image:-webkit-linear-gradient(top, rgba(255, 255, 255, .4), rgba(0, 0, 0, .1));color:#fff;border:none;display:block;position:absolute;-webkit-backface-visibility: hidden;text-shadow:0px -1px 0px rgba(0,0,0,.5);text-transform:uppercase;-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .4), inset 0 -1px rgba(0, 0, 0, .5), inset 0 1px rgba(255, 255, 255, .5);}
+  fieldset > div{width:100%;height:50px;-webkit-perspective:800px;}
+  div div {width:70%;height:100%;position:absolute;-webkit-transform-origin: center center;-webkit-transition: -webkit-transform .2s ease;-webkit-transform-style: preserve-3d;}
+  div input:last-child{-webkit-transform:rotateY(180deg);background-color:#BAB8B8;opacity:.8;}
+  
+  @-webkit-keyframes shake{
+  from{left:5px;}
+  50%{left:0px;}
+  to{left:5px;}
+  }
+  
+</style>
+</head>
+<body>
+	<form autocomplete="off">
+   <fieldset>
+    
+     <input type="text" id="full_name" name="full_name" required >
+     <label for="full_name">Votre nom</label>
+     <input type="email" id="email_addr" name="email_addr" required >
+     <label for="email_addr">Votre email </label>
+     <input type="email" id="email_addr_repeat" name="email_addr_repeat" required>
+     <label for="email_addr_repeat">Retapez votre email </label>
+     <input type="tel" id="tel" name="tel" pattern="[0-9]{10}" title="un numéro à 10 chiffres" placeholder="Téléphone à 10 chiffres">
+     
+     <div>
+        <div>
+          <input type="submit" value="complete" />
+          <input type="submit" value="complete"/>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+ 
+</body>
+</html>
