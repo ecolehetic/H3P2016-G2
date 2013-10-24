@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title></title>
+	<meta name="description" content="">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/video.css">	
+</head>
+<body>
+  <div id="button" class="loading">""
+    <span></span>
+    <span></span>
+  </div>
+  <!-- <a href="" id="controls"></a> -->
+	<video id="video" preload="none" volume="0">
+	  <source src="http://www.iletaituneforet-expedition.org/videos/v06-07_ld.ogv" type='video/ogg' >
+    <source src="http://www.iletaituneforet-expedition.org/videos/v06-07_ld.mp4" type='video/mp4' >
+    <p>Your user agent does not support the HTML5 Video element.</p>
+  </video>
+  <div id="progressBar">
+    <span class="progress"></span>
+    <span class="buffer"></span>
+  </div>
+  <script type="text/javascript" src="js/video_oo.js"></script>
+  <script type="text/javascript">
+  
+  var p=new player({
+    media:'#video',
+  	controller:'#progressBar',
+  	progress:'#progressBar :nth-child(1)',
+  	buffer:'#progressBar :nth-child(2)',
+  	loaded:function(player){ 
+  		document.getElementById('button').classList.remove('loading');
+  		console.log('loaded');
+  		player.playpause(); 
+  	},
+  	played:function(){
+  		document.getElementById('video').classList.add('play');
+  		document.getElementById('button').classList.add('off');
+  		console.log('playing'); 
+  	},
+  	paused:function(){
+  		document.getElementById('button').classList.remove('off');
+  		console.log('paused'); 
+  	},
+  	moved:function(){
+  	  console.log('video moved'); 
+  	}
+  });
+  document.getElementById('button').addEventListener('click',p.playpause,false);
+  document.getElementById('progressBar').addEventListener('click',p.setVideoTime,false);
+  document.getElementById('video').addEventListener("click",p.playpause, false);
+	
+  
+  </script>
+</body>
+</html>
