@@ -1,0 +1,19 @@
+body{background:#202118;cursor:pointer;}
+video{opacity:0;-webkit-transition:opacity 5s;display:block;margin:0 auto;width:100%;}
+video.play{opacity:1;}
+
+#progressBar{width:80%;height:8px;border-radius:4px;border:1px solid #fff;position:absolute;bottom:20px;left:10%;opacity:.6;}
+#progressBar span{border-top-left-radius:2px;border-bottom-left-radius:2px;height:6px;background-color:#fff;display:inline-block;position:absolute;top:1px;}
+
+#progressBar .progress{z-index:3;}
+#progressBar .buffer{opacity:.5;}
+
+#button{position:absolute;top:41%;left:44%;z-index:2;height:200px;width:200px;border:10px solid #fff;border-radius:200px;opacity:.5;text-align:center;background:transparent;transition:opacity .2s ease, -webkit-transform .2s ease;}
+#button.off{-webkit-transform:scale(4);opacity:0;}
+#button.loading{-webkit-animation: loading 1s infinite linear;}
+#button span{display:inline-block;height:100px;width:40px;background:#fff;margin:4em .5em 0 0;}
+
+@-webkit-keyframes loading {
+    0% {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}
+}
