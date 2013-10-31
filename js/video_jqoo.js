@@ -35,7 +35,6 @@ var player = {
 	
 	random :  function(e){
 		e.preventDefault();
-		console.log('random');
 		$.ajax({
 			url:player.property.file,
 			dataType:'json',
