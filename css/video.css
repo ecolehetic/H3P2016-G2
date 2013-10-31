@@ -13,6 +13,8 @@ video.play{opacity:1;}
 #button.loading{-webkit-animation: loading 1s infinite linear;}
 #button span{display:inline-block;height:100px;width:40px;background:#fff;margin:4em .5em 0 0;}
 
+#random{position:absolute;z-index:30;display:inline-block;height:30px;width:30px;border-radius:15px;background-color:rgba(255,255,255,.5);text-align:center;padding:5px 0 0 0;box-sizing:border-box;bottom:10px;left:5%;}
+
 @-webkit-keyframes loading {
     0% {-webkit-transform: rotate(0deg);}
     100% {-webkit-transform: rotate(360deg);}
