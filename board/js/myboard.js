@@ -8,6 +8,15 @@ board.init({
 	}
 });
 
+localize.init({
+	map : '#map div',
+	localized : function(pos){
+		$('#map').toggleClass('on');
+		localize.render(pos);
+	}
+})
+
+board.checkout();
 
 $('#addCard').on('submit',function(e){
 	e.preventDefault();
@@ -26,3 +35,27 @@ $('#addCard').on('submit',function(e){
 	var datas={title : title,date : newDate}
 	board.record(datas);
 });
+
+
+
+$('#addLocation').on('click',function(e){
+	e.preventDefault();
+	localize.getUserLocation();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
