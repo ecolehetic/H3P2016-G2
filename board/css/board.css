@@ -1,0 +1,28 @@
+body, html{height:100%;background-color:#333;font-family: 'Fredoka One', sans-serif;font-size:120%;}
+#tools{text-align:center;background:rgba(255,255,255,.8);padding:1em 0;}
+#tools a, .card a{font-family:Verdana, sans-serif;font-size:.5em;text-decoration:none;color:#333;}
+input{box-sizing:border-box;font-family: 'Fredoka One', sans-serif;padding:.8em;text-indent:.2em;width:25%;background-color:#333;color:#fff;border:none;box-shadow: 0 1px 2px rgba(0, 0, 0, .4);}
+input[type=date]{padding:.63em;}
+input[type=submit]{font-family:'Trebuchet MS';font-weight:bold;color:#fff;width:1em;line-height:.95em;padding:0;vertical-align:top;font-size:3em;background-color:#333;background-image:-webkit-linear-gradient(top, rgba(255, 255, 255, .2), rgba(0, 0, 0, .1));border:none;border-radius:5px;text-shadow:0px -1px 0px rgba(0,0,0,.5);text-transform:uppercase;box-shadow: 0 1px 2px rgba(0, 0, 0, .4), inset 0 -1px rgba(0, 0, 0, .5), inset 0 1px rgba(255, 255, 255, .5);text-indent:0;}
+#board{padding:1em;color:#ccc;}
+#board.empty:after{content:'Yet no cards!';}
+.card{display:inline-block;vertical-align:top;font-size:1.8em;color:#333;position:relative;padding:.7em .5em;overflow:hidden;width:8em;background-color:#fff;margin:0 1em 1em 0;}
+.card:before {content:"";position:absolute;top:0;right:0;border-width:0 32px 32px 0;border-style:solid;border-color:transparent transparent #fff #fff;background:#333;box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);display:block; width:0;}
+.card .date{position:absolute;top:.1em;left:.1em;font-family: 'Fredoka One', sans-serif;font-size:.5em;}
+.card .text{}
+.card a{position:absolute;font-size:.25em;}
+.card a.deleteButton{bottom:.1em;right:.1em;}
+.card a.mapButton{bottom:.1em;left:.1em;}
+.card .map{background-color:#fff;height:0em;width:100%;margin:.5em 0;}
+.card .map.on{height: 7em;}
+#map{position:absolute;z-index:2;left:0;width:100%;height:0;background-color:#fff;margin:1em 0 0 0 ;box-shadow: 0 5px 10px rgba(255,255,255,.4);opacity:0;transition:opacity 1s ease;}
+#map.on > div{width:100%;min-height:30em;}
+#map.on{opacity:1;min-height:30em;}
+#map form{position:absolute;z-index:100;width:100%;opacity:0;}
+#map.on form{opacity:1;}
+.loader {border: 10px solid #fff;border-top: 10px solid rgba(255,255,255,0);border-bottom: 10px solid rgba(255,255,255,0);width: 40px;height: 40px;border-radius: 50px;-webkit-animation: loading .6s infinite linear;opacity:0;position:absolute; right:10%;}
+.loader.on {opacity:1;}
+@-webkit-keyframes loading {
+    0% {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}
+}
