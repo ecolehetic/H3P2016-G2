@@ -22,8 +22,15 @@ var board={
 		var deleteButton=$('<a>').attr('href','').addClass('deleteButton').text('[delete]');
 		div.append(spanDate,spanText,deleteButton);
 		$(this.params.board).append(div);
-		
+	},
+	
+	checkout : function(){
+		for(i in localStorage){
+			var datas=localStorage.getItem(i);
+			this.render(JSON.parse(datas));
+		}
 	}
+	
 }
 
 
