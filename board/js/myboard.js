@@ -11,8 +11,13 @@ board.init({
 localize.init({
 	map : '#map div',
 	localized : function(pos){
-		$('#map').toggleClass('on');
+		$('#map, .loader').toggleClass('on');
 		localize.render(pos);
+	},
+	found : function(pos){
+		if(pos){
+			localize.markPos(pos);
+		}
 	}
 })
 
@@ -41,7 +46,27 @@ $('#addCard').on('submit',function(e){
 $('#addLocation').on('click',function(e){
 	e.preventDefault();
 	localize.getUserLocation();
+	$('.loader').toggleClass('on');
 });
+
+$('#geocoder').on('submit',function(e){
+	e.preventDefault();
+	var address=$('input[name=address]').val();
+	if(!address){
+		return;
+	}
+	localize.find(address);
+});
+
+$('.deleteButton').on('click',function(e){
+	e.preventDefault();
+	//var key=$(this).attr('data-key');
+	var key=$(this).data('key');
+	board.delete(key);
+	$(this).parent('.card').remove();
+})
+
+
 
 
 

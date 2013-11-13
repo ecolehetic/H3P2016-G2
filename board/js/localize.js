@@ -4,7 +4,8 @@ var localize={
 		map : '',
 		zoom : 17,
 		center : {latitude:48.857713,longitude:2.347271},
-		localized : function(){}
+		localized : function(){},
+		found : function(){}
 	},
 	
 	init : function(options){
@@ -36,8 +37,27 @@ var localize={
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 			center:latLng};
 			
-		new google.maps.Map(document.querySelector(this.params.map),settings);
-		
+		this.map=new google.maps.Map(document.querySelector(this.params.map),settings);
+	},
+	
+	find : function(address){
+		var geocoder=new google.maps.Geocoder();
+		geocoder.geocode(
+			{"address":address},
+			function(data,status){
+				if(status=='OK'){
+					var destPos=data[0].geometry.location;
+					localize.params.found.call(this,destPos);
+				} 
+				else{
+					localize.params.found.call(this,null);
+				}
+		});
+	},
+	
+	markPos : function(pos){
+		this.map.setCenter(pos);
+		new google.maps.Marker({position:pos,map:this.map});
 	}
 	
 };

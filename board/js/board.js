@@ -19,7 +19,7 @@ var board={
 		var div=$('<div>').addClass('card');
 		var spanDate=$('<span>').addClass('date').html(datas.date);
 		var spanText=$('<span>').addClass('text').html(datas.title);
-		var deleteButton=$('<a>').attr('href','').addClass('deleteButton').text('[delete]');
+		var deleteButton=$('<a>').attr('href','').attr('data-key',datas.date).addClass('deleteButton').text('[delete]');
 		div.append(spanDate,spanText,deleteButton);
 		$(this.params.board).append(div);
 	},
@@ -29,6 +29,10 @@ var board={
 			var datas=localStorage.getItem(i);
 			this.render(JSON.parse(datas));
 		}
+	},
+	
+	delete : function(key){
+		localStorage.removeItem(key);
 	}
 	
 }
