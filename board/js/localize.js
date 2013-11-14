@@ -59,6 +59,24 @@ var localize={
 		var latLng=new google.maps.LatLng(pos.latitude,pos.longitude);
 		this.map.setCenter(latLng);
 		new google.maps.Marker({position:latLng,map:this.map});
+	},
+	
+	itinerary : function(miniMap,datas){
+		var origin = new google.maps.LatLng(datas.userLoc.latitude, datas.userLoc.longitude);
+		var destination = new google.maps.LatLng(datas.destLoc.latitude, datas.destLoc.longitude);
+		var settings = {mapTypeId: google.maps.MapTypeId.ROADMAP};
+		var bounds = new google.maps.LatLngBounds (origin,destination); 
+		var map = new google.maps.Map(miniMap, settings);
+		map.fitBounds(bounds);
+		
+		var display = new google.maps.DirectionsRenderer({map : map});
+     var request = {origin : origin,destination : destination,travelMode : google.maps.DirectionsTravelMode.DRIVING}
+     var itinerary = new google.maps.DirectionsService();
+     itinerary.route(request, function(response, status){
+				if(status == google.maps.DirectionsStatus.OK){
+        		display.setDirections(response); 
+     		}
+   	 });
 	}
 	
 };
