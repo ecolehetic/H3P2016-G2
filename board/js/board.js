@@ -21,6 +21,11 @@ var board={
 		var spanText=$('<span>').addClass('text').html(datas.title);
 		var deleteButton=$('<a>').attr('href','').attr('data-key',datas.date).addClass('deleteButton').text('[delete]');
 		div.append(spanDate,spanText,deleteButton);
+		if(datas.userLoc&&datas.destLoc){
+			var miniMap=$('<div>').addClass('map');
+			var mapButton=$('<a>').attr('href','').attr('data-key',datas.date).addClass('mapButton').text('[see map]');
+			div.append(miniMap,mapButton);
+		}
 		$(this.params.board).append(div);
 		this.params.rendered.call(this);
 	},
@@ -34,6 +39,10 @@ var board={
 	
 	delete : function(key){
 		localStorage.removeItem(key);
+	},
+	
+	getItem : function(key){
+		return JSON.parse(localStorage.getItem(key));
 	}
 	
 }

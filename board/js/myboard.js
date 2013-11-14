@@ -1,3 +1,9 @@
+// applicationCache.update();
+// 
+// applicationCache.addEventListener('updateready',function(){
+// 	applicationCache.swapCache();
+// },false);
+
 var datas={};
 
 board.init({
@@ -70,7 +76,16 @@ $('#board').on('click','.deleteButton',function(e){
 	var key=$(this).data('key');
 	board.delete(key);
 	$(this).parent('.card').remove();
-})
+});
+
+$('#board').on('click','.mapButton',function(e){
+	e.preventDefault();
+	var miniMap=$(this).prevAll('.map');
+	miniMap.toggleClass('on');
+	var key=$(this).data('key');
+	var datas=board.getItem(key);
+	localize.itinerary(miniMap[0],datas);
+});
 
 
 
