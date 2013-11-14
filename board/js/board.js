@@ -22,6 +22,7 @@ var board={
 		var deleteButton=$('<a>').attr('href','').attr('data-key',datas.date).addClass('deleteButton').text('[delete]');
 		div.append(spanDate,spanText,deleteButton);
 		$(this.params.board).append(div);
+		this.params.rendered.call(this);
 	},
 	
 	checkout : function(){
