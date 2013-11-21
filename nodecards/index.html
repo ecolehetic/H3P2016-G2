@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>My Board</title>
+	<meta name="description" content="">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/board.css">
+
+	
+</head>
+<body>
+  <section id="tools">
+    <div class="loader"></div>
+    <form id="addCard">
+      <input type="text" name="name" placeholder="next card title" autocomplete="off"/>
+      
+      <input type="submit" value="+"/>
+      
+    </form> 
+         
+    <div id="map">
+      <form id="geocoder">
+        <input type="text" name="address" placeholder="your card location" />
+      </form>
+      <div></div>
+    </div> 
+  </section>
+  <section id="board">
+  </section>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://macbook-maraboutee.local:8080/socket.io/socket.io.js"></script>
+	<script src="js/board.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
